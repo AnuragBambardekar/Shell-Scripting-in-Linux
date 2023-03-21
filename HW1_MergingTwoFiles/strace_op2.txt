@@ -1,0 +1,234 @@
+anuragb@anuragb:~/ECE434$ strace ./merge_files bambaFile1.txt bambaFile2.txt
+execve("./merge_files", ["./merge_files", "bambaFile1.txt", "bambaFile2.txt"], 0x7ffe11ad0720 /* 46 vars */) = 0
+brk(NULL)                               = 0x564dae5f6000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffed7787df0) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79a5000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=61659, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 61659, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fdae7995000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libasan.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=7619624, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 10391048, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fdae6fac000
+mprotect(0x7fdae6fd0000, 1089536, PROT_NONE) = 0
+mmap(0x7fdae6fd0000, 880640, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7fdae6fd0000
+mmap(0x7fdae70a7000, 204800, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xfb000) = 0x7fdae70a7000
+mmap(0x7fdae70da000, 28672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12d000) = 0x7fdae70da000
+mmap(0x7fdae70e1000, 9125384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fdae70e1000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fdae6d84000
+mmap(0x7fdae6dac000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fdae6dac000
+mmap(0x7fdae6f41000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fdae6f41000
+mmap(0x7fdae6f99000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fdae6f99000
+mmap(0x7fdae6f9f000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fdae6f9f000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 942344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fdae6c9d000
+mmap(0x7fdae6cab000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7fdae6cab000
+mmap(0x7fdae6d27000, 372736, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8a000) = 0x7fdae6d27000
+mmap(0x7fdae6d82000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe4000) = 0x7fdae6d82000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 127720, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fdae6c7d000
+mmap(0x7fdae6c80000, 94208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7fdae6c80000
+mmap(0x7fdae6c97000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7fdae6c97000
+mmap(0x7fdae6c9b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7fdae6c9b000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae6c7b000
+arch_prctl(ARCH_SET_FS, 0x7fdae6c7be80) = 0
+set_tid_address(0x7fdae6c7c150)         = 3770
+set_robust_list(0x7fdae6c7c160, 24)     = 0
+rseq(0x7fdae6c7c820, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fdae6f99000, 16384, PROT_READ) = 0
+mprotect(0x7fdae6c9b000, 4096, PROT_READ) = 0
+mprotect(0x7fdae6d82000, 4096, PROT_READ) = 0
+mprotect(0x7fdae70da000, 16384, PROT_READ) = 0
+mprotect(0x564dade0b000, 4096, PROT_READ) = 0
+mprotect(0x7fdae79df000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fdae7995000, 61659)           = 0
+readlink("/proc/self/exe", "/home/anuragb/ECE434/merge_files", 4096) = 32
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79de000
+open("/proc/self/cmdline", O_RDONLY)    = 3
+read(3, "./merge_files\0bambaFile1.txt\0bam"..., 4096) = 44
+read(3, "", 4052)                       = 0
+close(3)                                = 0
+munmap(0x7fdae79de000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79de000
+open("/proc/self/environ", O_RDONLY)    = 3
+read(3, "SHELL=/usr/bin/bash\0SESSION_MANA"..., 4096) = 3041
+read(3, "", 1055)                       = 0
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79a3000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79a1000
+mmap(NULL, 3481600, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae6929000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae79a0000
+prlimit64(0, RLIMIT_CORE, NULL, {rlim_cur=0, rlim_max=RLIM64_INFINITY}) = 0
+prlimit64(0, RLIMIT_CORE, {rlim_cur=0, rlim_max=RLIM64_INFINITY}, NULL) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae799f000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "564dade08000-564dade09000 r--p 0"..., 4096) = 4051
+read(3, "", 45)                         = 0
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae799e000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "564dade08000-564dade09000 r--p 0"..., 4096) = 4051
+read(3, "", 45)                         = 0
+close(3)                                = 0
+munmap(0x7fdae799e000, 4096)            = 0
+mmap(0x7fff7000, 268435456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fff7000
+madvise(0x7fff7000, 268435456, MADV_NOHUGEPAGE) = 0
+madvise(0x7fff7000, 268435456, MADV_DONTDUMP) = 0
+mmap(0x2008fff7000, 15392894357504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x2008fff7000
+madvise(0x2008fff7000, 15392894357504, MADV_NOHUGEPAGE) = 0
+madvise(0x2008fff7000, 15392894357504, MADV_DONTDUMP) = 0
+mmap(0x8fff7000, 2199023255552, PROT_NONE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x8fff7000
+sigaltstack(NULL, {ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=0}) = 0
+mmap(NULL, 32768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae7997000
+sigaltstack({ss_sp=0x7fdae7997000, ss_flags=0, ss_size=32768}, NULL) = 0
+rt_sigaction(SIGSEGV, {sa_handler=0x7fdae70663c0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fdae6dc6520}, NULL, 8) = 0
+rt_sigaction(SIGBUS, {sa_handler=0x7fdae70663c0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fdae6dc6520}, NULL, 8) = 0
+rt_sigaction(SIGFPE, {sa_handler=0x7fdae70663c0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x7fdae6dc6520}, NULL, 8) = 0
+mmap(0x600000000000, 4398046523392, PROT_NONE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x600000000000
+mmap(0x640000000000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x640000000000
+mmap(NULL, 8388608, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fdae6129000
+mmap(NULL, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae611b000
+mmap(NULL, 33554432, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae411b000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae7996000
+getpid()                                = 3770
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae7995000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "7fff7000-8fff7000 rw-p 00000000 "..., 4096) = 4055
+read(3, "7ffed7769000-7ffed778a000 rw-p 0"..., 41) = 41
+close(3)                                = 0
+munmap(0x7fdae7995000, 4096)            = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4119000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "7fff7000-8fff7000 rw-p 00000000 "..., 8192) = 4055
+read(3, "7ffed7769000-7ffed778a000 rw-p 0"..., 4137) = 325
+read(3, "", 3812)                       = 0
+close(3)                                = 0
+munmap(0x7fdae799f000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae799f000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "7fff7000-8fff7000 rw-p 00000000 "..., 4096) = 4055
+read(3, "7ffed7769000-7ffed778a000 rw-p 0"..., 41) = 41
+close(3)                                = 0
+munmap(0x7fdae799f000, 4096)            = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4117000
+open("/proc/self/maps", O_RDONLY)       = 3
+read(3, "7fff7000-8fff7000 rw-p 00000000 "..., 8192) = 3984
+read(3, "7fdae79e1000-7fdae79e3000 rw-p 0"..., 4208) = 445
+read(3, "", 3763)                       = 0
+close(3)                                = 0
+munmap(0x7fdae4117000, 8192)            = 0
+mmap(0x10005adea000, 1044480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x10005adea000
+madvise(0x10005adea000, 1044480, MADV_NOHUGEPAGE) = 0
+madvise(0x10005adea000, 1044480, MADV_DONTDUMP) = 0
+sigaltstack(NULL, {ss_sp=0x7fdae7997000, ss_flags=0, ss_size=32768}) = 0
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3f19000
+munmap(0x7fdae3f19000, 946176)          = 0
+munmap(0x7fdae4100000, 102400)          = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae799f000
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3e00000
+munmap(0x7fdae3f00000, 1048576)         = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae7995000
+mmap(NULL, 1179648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3ce0000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3ae0000
+munmap(0x7fdae3ae0000, 131072)          = 0
+munmap(0x7fdae3c00000, 917504)          = 0
+mmap(NULL, 2097152, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3900000
+munmap(0x7fdae3a00000, 1048576)         = 0
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+munmap(0x7fdae4118000, 4096)            = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4118000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4117000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4115000
+clock_gettime(CLOCK_MONOTONIC, {tv_sec=1142, tv_nsec=823022534}) = 0
+mmap(0x607000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x607000000000
+mmap(0x607e00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x607e00000000
+mmap(NULL, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4105000
+clock_gettime(CLOCK_MONOTONIC, {tv_sec=1142, tv_nsec=825073438}) = 0
+mmap(0x603000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x603000000000
+mmap(0x603e00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x603e00000000
+clock_gettime(CLOCK_MONOTONIC, {tv_sec=1142, tv_nsec=825969440}) = 0
+mmap(0x60b000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x60b000000000
+mmap(0x60be00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x60be00000000
+clock_gettime(CLOCK_MONOTONIC, {tv_sec=1142, tv_nsec=826459497}) = 0
+mmap(0x624000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x624000000000
+mmap(0x624e00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x624e00000000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4104000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae4103000
+mmap(0x615000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x615000000000
+mmap(0x615e00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x615e00000000
+openat(AT_FDCWD, "bambaFile1.txt", O_RDONLY) = 3
+openat(AT_FDCWD, "bambaFile2.txt", O_RDONLY) = 4
+openat(AT_FDCWD, "myfile.out", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 5
+newfstatat(3, "", {st_mode=S_IFREG|0664, st_size=40, ...}, AT_EMPTY_PATH) = 0
+mmap(0x621000000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x621000000000
+mmap(0x621e00000000, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x621e00000000
+read(3, "Data for file_in_1 This is OS 43"..., 4096) = 40
+newfstatat(5, "", {st_mode=S_IFREG|0664, st_size=0, ...}, AT_EMPTY_PATH) = 0
+read(3, "", 4096)                       = 0
+newfstatat(4, "", {st_mode=S_IFREG|0664, st_size=42, ...}, AT_EMPTY_PATH) = 0
+read(4, "data for file_in_2 but also OS 5"..., 4096) = 42
+read(4, "", 4096)                       = 0
+close(3)                                = 0
+close(4)                                = 0
+write(5, "Data for file_in_1 This is OS 43"..., 82) = 82
+close(5)                                = 0
+gettid()                                = 3770
+prctl(PR_GET_DUMPABLE)                  = 1 (SUID_DUMP_USER)
+getpid()                                = 3770
+mmap(NULL, 2101248, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae36ff000
+mprotect(0x7fdae36ff000, 4096, PROT_NONE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[ILL ABRT BUS FPE SEGV XCPU XFSZ], [], 8) = 0
+clone(child_stack=0x7fdae38ffff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_UNTRACED) = 3772
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+getpid()                                = 3770
+prctl(PR_SET_PTRACER, 3772)             = 0
+futex(0x7ffed7787ac0, FUTEX_WAKE_PRIVATE, 1) = 1
+sched_yield()                           = 0
+sched_yield()                           = 0
+wait4(3772, NULL, __WALL, NULL)         = 3772
+munmap(0x7fdae36ff000, 2101248)         = 0
+getpid()                                = 3770
+write(2, "==3770==LeakSanitizer has encoun"..., 53==3770==LeakSanitizer has encountered a fatal error.
+) = 53
+mmap(NULL, 65536, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdae3ff0000
+getpid()                                = 3770
+write(2, "==3770==HINT: For debugging, try"..., 101==3770==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+) = 101
+getpid()                                = 3770
+write(2, "==3770==HINT: LeakSanitizer does"..., 74==3770==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+) = 74
+exit_group(1)                           = ?
++++ exited with 1 +++
+anuragb@anuragb:~/ECE434$ 
+  

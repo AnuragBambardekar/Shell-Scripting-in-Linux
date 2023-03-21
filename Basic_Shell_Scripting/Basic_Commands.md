@@ -19,7 +19,8 @@ lsb_release - print distribution-specific information
 htop - interactive process viewer <br>
 htop -u anuragb [see my processes]
 
-```pwd```
+```pwd```  <br>
+Print working Directory
 ```
 anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ pwd
 /home/anuragb/ECE434/Basic_Linux_Commands
@@ -38,14 +39,14 @@ ls –lt // list my files but in a sorted fashion, in the order of time <br>
 ls –lt –reverse // list my files but in a sorted fashion, in the reverse order of time <br>
 
 ```cd``` <br>
-cd - change directory
+Change directory
 ```
 anuragb@anuragb:~/ECE434$ cd Basic_Linux_Commands/
 anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ 
 ```
 
 ```ps``` <br>
-ps - list processes 
+List processes 
 ```
 anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ ps
     PID TTY          TIME CMD
@@ -57,6 +58,7 @@ ps –el <br>
 ps –al // can see hidden processes as well <br>
 ps –u //can see my own processes, coming from user anuragb <br>
 ps –aux // show only my own processes, and not only those attached to the current terminal <br>
+ps -e --forest // which processes fork to other processes <br>
 
 a = show processes for all users <br>
 u = display the process's user/owner <br>
@@ -64,6 +66,25 @@ x = also show processes not attached to a terminal <br>
 
 ```kill``` <br>
 kill -9 no_of_process //kill this process
+
+```
+anuragb@anuragb:~/ECE434/in_class$ kill -l
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+anuragb@anuragb:~/ECE434/in_class$ 
+
+```
 
 ```whoami``` <br>
 ```
@@ -116,8 +137,8 @@ To exit the prompt and write the changes to the file, hold the Ctrl key and pres
 ```cat file``` //outputs / concatenates file contents <br>
 ```cat file | more``` //If file having large number of content that won’t fit in output terminal and screen scrolls up very fast, we can use parameters more <br>
 ```cat –n file``` //With -n option you could see the line numbers of a file in the output terminal. <br>
-```cat file > test``` //We can redirect standard output of a file into a new file <br>
-```cat file >> test``` // Appends in existing file with ‘>>‘ double greater than symbol. Here, contents of test file will be appended at the end of test1 file. <br>
+```cat file > test``` //We can redirect standard output of a file into a new file [**overwrites existing content**]<br>
+```cat file >> test``` // **Appends** in existing file with ‘>>‘ double greater than symbol. Here, contents of test file will be appended at the end of test1 file. <br>
 ```cat test1 test2 test3 > test4``` //This will create a file called test4 and all output will be redirected in a newly created file <br>
 
 ```
@@ -125,6 +146,13 @@ Instead of displaying the contents of a file on the screen, cat can put them in 
 ```
 ```./executable_file > Testing.txt``` (write the output into Testing.txt) <br>
 ```cat Testing.txt``` (concatenate Testing.txt) <br>
+
+Put executable's output in a file <br>
+```
+gcc test.c -o test -lm
+./test > test.txt
+cat test.txt
+```
 
 
 ### Find shell
@@ -184,3 +212,63 @@ That'd be execlp("ls", "ls", "-l", "/", (char *)NULL); <br>
 anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ which echo
 /usr/bin/echo
 ```
+
+## Types of Linux Shell
+1. Bourne Shell (sh)
+2. C shell (csh)
+3. TENEX C shell (tcsh)
+4. Korn shell (ksh)
+5. Debian Almquist shell (dash)
+6. Bourne Again shell (bash)
+7. Z shell (zsh)
+8. friendly interactive shell (fish)
+
+echo $SHELL -> returns path to executable file of default shell <br>
+echo $0 -> returns name of current shell <br>
+ps -p ```$$``` -> The dollar signs represents PID of currently running shell <br>
+echo ```$$``` -> returns process ID of current shell
+
+### Instructions to switch from default shell to another shell and back to default shell
+
+cat /etc/shells -> view list of available shells <br>
+chsh <br>
+Then enter path of executable file of shell: /usr/bin/rbash <br>
+Restart terminal to see changes take effect.<br>
+Run ps -p ```$$``` to confirm change of shell. <br>
+Switch back to default shell: ```exec $SHELL``` <br>
+
+Another method is to run: ```exec fish``` to switch to fish. <br>
+
+Detailed ```ps``` view <br>
+```
+anuragb@anuragb:~/ECE434$ ps -o ppid,pid,euser,stat,%cpu,rss,args
+   PPID     PID EUSER    STAT %CPU   RSS COMMAND
+  10535   10553 anuragb  Ss    0.2  5484 bash
+  10553   10560 anuragb  R+    0.0  1568 ps -o ppid,pid,euser,stat,%cpu,rss,args
+anuragb@anuragb:~/ECE434$ 
+```
+### STAT:
+**First State Character** <br>
+D: Uninterruptible sleep (usually IO) <br>
+R: Running or runnable (or run queue) <br>
+S: Interruptible Sleep (waiting for an event to complete) <br>
+T: Stopped, either by a job control signal or because it is being traced <br>
+Z: defunct ("zombie") process, terminated but not reaped by its parent <br>
+
+**Second State Character** <br>
+< High Priority <br>
+N Low priority <br>
+L has pages locked into memory (for real-time and custom IO) <br>
+s is a session leader (closes all child processes on termination) <br>
+L is multi-threaded (uses pthread) <br>
++ is in the foreground process group <br>
+
+
+```top``` <br>
+allows you to view the processes running on the machine in real time - one of the few animated built-in programs. <br>
+
+```uptime``` <br>
+shows the average number of runnable processes over several different periods of time. (1, 5 and 15 minutes) <br>
+
+```cat /proc/cpuinfo``` <br>
+To see number of cores in CPU, among many other things. <br>
