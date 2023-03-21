@@ -109,4 +109,78 @@ In the ls -a output, . represents the current directory, and .. represents the p
 
 For example, suppose I want to find all of the running instances of a program called ```zsh```. I could use ps to find the list of all of my processes. However, this list could be massive, and scrolling through it all would be a pain. I could combine it with grep to search through the results of ps and display only what I am looking for: ```ps | grep zsh```
 
+```cat > file``` //creates a new file <br>
+```
+To exit the prompt and write the changes to the file, hold the Ctrl key and press d 
+```
+```cat file``` //outputs / concatenates file contents <br>
+```cat file | more``` //If file having large number of content that won’t fit in output terminal and screen scrolls up very fast, we can use parameters more <br>
+```cat –n file``` //With -n option you could see the line numbers of a file in the output terminal. <br>
+```cat file > test``` //We can redirect standard output of a file into a new file <br>
+```cat file >> test``` // Appends in existing file with ‘>>‘ double greater than symbol. Here, contents of test file will be appended at the end of test1 file. <br>
+```cat test1 test2 test3 > test4``` //This will create a file called test4 and all output will be redirected in a newly created file <br>
 
+```
+Instead of displaying the contents of a file on the screen, cat can put them in a file.
+```
+```./executable_file > Testing.txt``` (write the output into Testing.txt) <br>
+```cat Testing.txt``` (concatenate Testing.txt) <br>
+
+
+### Find shell
+```
+anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ echo $SHELL
+/usr/bin/bash
+```
+```ps –p $$``` // The $$ is the process id of the shell in which your script is running
+
+### exec system call
+The  exec() family of functions replaces the current process image with a new process image. <br>
+
+```l - execl(), execlp(), execle()```
+The const char *arg and subsequent ellipses can be thought of as  arg0,
+arg1, ..., argn.  Together they describe a list of one or more pointers
+to null-terminated strings that represent the argument  list  available
+to  the  executed  program.   The first argument, by convention, should
+point to the filename associated with the  file  being  executed.   The
+list  of  arguments  must  be  terminated by a null pointer, and, since
+these are variadic functions, this pointer must be cast (char *) NULL.
+
+By contrast with the 'l' functions, the 'v' functions  (below)  specify
+the command-line arguments of the executed program as a vector.
+
+```v - execv(), execvp(), execvpe()```
+The  char *const argv[] argument is an array of pointers to null-termi‐
+nated strings that represent the argument list  available  to  the  new
+program.   The first argument, by convention, should point to the file‐
+name associated with the file being executed.  The  array  of  pointers
+must be terminated by a null pointer.
+
+```e - execle(), execvpe()```
+The  environment of the caller is specified via the argument envp.  The
+envp argument is an array of pointers to  null-terminated  strings  and
+must be terminated by a null pointer.
+
+All  other  exec()  functions  (which do not include 'e' in the suffix)
+take the environment for the new process image from the external  vari‐
+able environ in the calling process. <br>
+
+```p - execlp(), execvp(), execvpe()```
+These  functions duplicate the actions of the shell in searching for an
+executable file if the specified filename does not contain a slash  (/)
+character.  
+
+The file is sought in the colon-separated list of directory pathnames specified in the PATH environment variable.  If this variable isn't  defined,  the path list defaults to a list that includes the directories returned by confstr(_CS_PATH) (which  typically  returns  the value "/bin:/usr/bin") and possibly also the current working directory. <br>
+
+```ls``` <br>
+That'd be execlp("ls", "ls", (char *)NULL); <br>
+
+```ls -l /``` <br>
+That'd be execlp("ls", "ls", "-l", "/", (char *)NULL); <br>
+
+
+```echo``` - display a line of text
+```
+anuragb@anuragb:~/ECE434/Basic_Linux_Commands$ which echo
+/usr/bin/echo
+```
