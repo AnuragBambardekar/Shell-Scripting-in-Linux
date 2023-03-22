@@ -5,3 +5,6 @@
 3. Wait() System Call
 4. HW1 - Merging two files
 5. HW2 - Forks
+6. In Class Files
+7. Pipes
+8. Signals
