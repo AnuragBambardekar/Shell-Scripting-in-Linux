@@ -4,6 +4,8 @@
 #include <string>
 #include <unistd.h>
 
+// A Broken Pipe Demo
+
 int main() {
     char buffer[30];
     int pipefd[2];
