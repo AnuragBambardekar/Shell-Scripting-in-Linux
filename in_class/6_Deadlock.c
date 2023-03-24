@@ -18,6 +18,7 @@ int main()
             printf("pid: %d",p);
         } else {
             waitpid(p,&status, 0); //Deadlock - Don't run
+            // waits on a process with p=0 that doesnt exist
         }
     }
 }
