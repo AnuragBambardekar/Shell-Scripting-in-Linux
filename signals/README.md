@@ -9,4 +9,6 @@
 **Program 7:** Custom Signal Handler 3 [signal_handler.c] <br>
 **Program 8:** Custom Signal Handler 4 [with debugging messages] [signal_handler2.c] <br>
 **Program 9:** Custom Signal Handler 5 [with a fork()] [signal_handler3.c] <br>
+**Program 10:** Suicidal Process [suicidal_process.c] <br>
+**Program 11:** Custom Signal Handler 6  [signal_handler4.c] <br>
 
