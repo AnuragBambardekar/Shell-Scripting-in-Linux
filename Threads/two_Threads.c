@@ -2,6 +2,8 @@
 #include <pthread.h>
 #include <unistd.h>
 
+// Creating 2 Threads
+// Function Declaration for implementing later in the program
 void *thread_function(void *arg);
 
 int main()

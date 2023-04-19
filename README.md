@@ -9,4 +9,5 @@
 7. Pipes
 8. Signals
 9. in_class/recitation programs
-10. Threads - Sieve of Eratosthenes
+10. Threads - Sieve of Eratosthenes, Square of a value, summation function, 10 threads, workers comparison, computation of PI
+11. HW3 - Processes & Threads

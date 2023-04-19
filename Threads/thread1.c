@@ -3,6 +3,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
+// In-Class Program
 int sum; //global
 // void *runner(void *param); // Function Prototype
 void *runner(void *param) // void * function can take a pointer that doesn't need to be a specific type
