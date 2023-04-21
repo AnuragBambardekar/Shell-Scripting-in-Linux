@@ -23,14 +23,13 @@ void *find_primes(void *arg) {
     // check if there are any previously discovered primes
     if (prime_count > 0) {
         last_prime = prime_list[prime_count - 1];
-        if (last_prime > range->start) {
-            range->start = last_prime + 1;
-        }
     }
 
-    for (int i = range->start; i <= range->end; i++) {
+    for (int i = 2; i <= range->end; i++) {
         if (primes[i]) {
-            prime_list[prime_count++] = i;
+            if (i > last_prime) {
+                prime_list[prime_count++] = i;
+            }
             for (int j = i * i; j <= range->end; j += i) {
                 primes[j] = false;
             }
@@ -39,6 +38,7 @@ void *find_primes(void *arg) {
 
     pthread_exit(NULL);
 }
+
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
